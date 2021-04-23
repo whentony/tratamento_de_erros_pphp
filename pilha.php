@@ -1,6 +1,6 @@
 <?php
 //pilha
-
+//Arquivo referente ao curso  PHP Exceptions: Tratamento de erros da Alura.
 //debug_backtrace()  ->  Mostra a trilha da pilha
 
 /*
@@ -15,7 +15,7 @@ function funcao1(){
         echo $problema->getMessage(). PHP_EOL;
         echo $problema->getLine(). PHP_EOL;
         echo $problema->getTraceAsString(). PHP_EOL;
-    } 
+    }
     echo "Saindo da função 1". PHP_EOL;
 }
 
@@ -25,12 +25,16 @@ function funcao2(){
     for($i = 0; $i <= 5; $i++){
         echo $i. PHP_EOL;
     }
-    $divisao = intdiv(5, 0);
+   /* $divisao = intdiv(5, 0);
     $arrayFixo = new SplFixedArray(2);
-    $arrayFixo[3] = "valor"; 
-    
-  
-     
+    $arrayFixo[3] = "valor";*/
+
+    /*
+     * Lançamento de Excessão
+     * Utilizamos o throw como lançar
+     */
+    $excepetion  = new RuntimeException();
+    throw $excepetion;
     echo "Saindo da função 2".PHP_EOL;
 }
 
