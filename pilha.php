@@ -11,10 +11,12 @@ function funcao1(){
     echo "Entrei na função 1". PHP_EOL;
     try{
         funcao2();
-    } catch(DivisionByZeroError | RuntimeException $problema){
-        echo $problema->getMessage(). PHP_EOL;
-        echo $problema->getLine(). PHP_EOL;
-        echo $problema->getTraceAsString(). PHP_EOL;
+        // Pegar Qualquer excessão Throwable, mas não é recomendado
+    } catch(Throwable $exception){
+        echo "Deu excessao". PHP_EOL;;
+        echo $exception->getMessage(). PHP_EOL;
+        echo $exception->getLine(). PHP_EOL;
+        echo $exception->getTraceAsString(). PHP_EOL;
     }
     echo "Saindo da função 1". PHP_EOL;
 }
@@ -25,16 +27,16 @@ function funcao2(){
     for($i = 0; $i <= 5; $i++){
         echo $i. PHP_EOL;
     }
-   /* $divisao = intdiv(5, 0);
+    $divisao = intdiv(5, 0);
     $arrayFixo = new SplFixedArray(2);
-    $arrayFixo[3] = "valor";*/
+    $arrayFixo[3] = "valor";
 
     /*
      * Lançamento de Excessão
      * Utilizamos o throw como lançar
      */
-    $excepetion  = new RuntimeException();
-    throw $excepetion;
+    //$excepetion  = new RuntimeException();
+    //throw $excepetion;
     echo "Saindo da função 2".PHP_EOL;
 }
 
